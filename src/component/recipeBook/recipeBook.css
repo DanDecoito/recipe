@@ -1,0 +1,12 @@
+.col {
+    width: 25%;
+    text-align: center;
+  }
+  
+  .my-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* creates 4 equal columns */
+  }
+
+
+  
