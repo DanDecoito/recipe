@@ -1,37 +1,16 @@
 import { useState, useEffect } from "react"
+import React from "react";
 
+function DataVisualization(props) {
 
-let num = 0
+  let [arr, setArr] = useState([])
+  
 
-function DataVisualization (props) {
-    const  [calCount, setCalCount] = useState(props.calories )
-
-
-
-    return (
-        <>
-            
-            {console.log(calCount)}
-            
-
-            
-
-
-
-
-
-            {/* {recipe.ingredients.map( (ingredient) => {
-                let protein = ingredient.protein
-                let fat = ingredient.fat
-                let carb = ingredient.carb
-
-
-
-            })} */}
-
-        </>
-    )
+  return (
+    <>
+      {console.log(props.calories )}
+    </>
+  )
 }
 
-
-export default DataVisualization
+export default React.memo(DataVisualization);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default function Modal() {
+function Modal() {
+    // Varaibles 
     const [showModal, setShowModal] = React.useState(false);
     const [newIngredient, setNewIngredient] = useState("")
     const [newCalorie, setNewCalorie] = useState("")
@@ -8,41 +9,13 @@ export default function Modal() {
     const [newCarb, setNewCarb] = useState("");
     const [newFat, setNewFat] = useState("");
 
-
-
-
-
+    
     const [recipe, setNewRecipe] = useState(() => {
         const recipeFromStorage = JSON.parse(localStorage.getItem('recipe'));
         return recipeFromStorage || { ingredients: [] };
     });
 
-    //   useEffect(() => {
-    //     const recipeFromStorage = JSON.parse(localStorage.getItem('recipe'));
-    //     if (recipeFromStorage) {
-    //       setNewRecipe(recipeFromStorage);
-    //     }
-    //   }, []);
-
-
-    // const addIngredient = () => {
-    // const newId = recipe.ingredients.length + 1;
-    // const newIngredient = {
-    //   id: newId,
-    //   name: newIngredient,
-    //   weight: "",
-    //   calServing: "",
-    //   calTotal: "",
-    // };
-    // const newIngredients = [...recipe.ingredients, newIngredient];
-    // const newRecipe = { ...recipe, ingredients: newIngredients };
-    // setNewRecipe(newRecipe);
-    // localStorage.setItem('recipe', JSON.stringify(newRecipe));
-    // };
-
-
-
-
+    // Function that saves all the users input and then saves it 
     const handleRecipeSave = () => {
         const newId = recipe.ingredients.length + 1;
         const newIngredientObj = {
@@ -180,3 +153,6 @@ export default function Modal() {
         </>
     );
 }
+
+
+export default React.memo(Modal)
